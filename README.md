@@ -1,1 +1,2 @@
-# oop
+# Objektorienteeritud programmeerimine 2018
+Objektorienteeritud programmeerimise kursuse rühmatööd.
