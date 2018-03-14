@@ -87,7 +87,7 @@ public class Mängulaud {
             if (laud[rida][i] != mängija)
                 break;
             if (i == dimensioon-1){
-                System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
+                System.out.println("Mängija " + mängija + " on võitnud selle mängu! Palju õnne! ");
                 mängur.setMängeVõidetud(mängur.getMängeVõidetud()+1);
                 keegiVõitis = true;
                 break;
@@ -100,7 +100,7 @@ public class Mängulaud {
                 break;
             }
             if (i == dimensioon-1){
-                System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
+                System.out.println("Mängija " + mängija + " on võitnud selle mängu! Palju õnne! ");
                 mängur.setMängeVõidetud(mängur.getMängeVõidetud()+1);
                 keegiVõitis = true;
                 break;
@@ -112,7 +112,7 @@ public class Mängulaud {
                     break;
                 }
                 if (i == dimensioon-1){
-                    System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
+                    System.out.println("Mängija " + mängija + " on võitnud selle mängu! Palju õnne! ");
                     mängur.setMängeVõidetud(mängur.getMängeVõidetud()+1);
                     keegiVõitis = true;
                     break;
@@ -125,7 +125,7 @@ public class Mängulaud {
                 if (laud[i][(dimensioon - 1)-i] != mängija)
                     break;
                 if (i == dimensioon -1){
-                    System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
+                    System.out.println("Mängija " + mängija + " on võitnud selle mängu! Palju õnne! ");
                     mängur.setMängeVõidetud(mängur.getMängeVõidetud()+1);
                     keegiVõitis = true;
                     break;
