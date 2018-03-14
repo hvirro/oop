@@ -25,7 +25,7 @@ public class Mängulaud {
     public void hetkeseis() {
 
         System.out.println("+---+---+---+");
-        for (int i = 0; i < 3; i++) {System.out.print("|");
+        for (int i = 0; i < 3; i++) {System.out.print("| ");
                 for (int j = 0; j < 3; j++) {
                     System.out.print(laud[i][j]+ " | ");
                     }
@@ -46,8 +46,8 @@ public class Mängulaud {
         String käik = scan.nextLine();
         String[] eraldiKäik = käik.split(" ");
 
-        int rida = 3 - Integer.parseInt(eraldiKäik[1]);
-        int veerg = Integer.parseInt(eraldiKäik[2]) - 1;
+        int rida = 3 - Integer.parseInt(eraldiKäik[0]);
+        int veerg = Integer.parseInt(eraldiKäik[1]) - 1;
 
         koordinaadid.add(rida);
         koordinaadid.add(veerg);
@@ -57,8 +57,8 @@ public class Mängulaud {
     // Uue käigu lisamine
     public void uusKäik(char mängija) {
         ArrayList<Integer> koordinaadid = koordinaadid();
-        int rida = koordinaadid.get(1);
-        int veerg = koordinaadid.get(2);
+        int rida = koordinaadid.get(0);
+        int veerg = koordinaadid.get(1);
         // Mingi koordinaadi kontrollimine peaks olema (kas ruut on vaba)...
         if (laud[rida][veerg]=='-') {
             laud[rida][veerg] = mängija;
