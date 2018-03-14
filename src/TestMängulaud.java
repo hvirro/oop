@@ -16,11 +16,13 @@ public class TestMängulaud {
             laud.hetkeseis();
             laud.uusKäik(mängija1);
             laud.clearScreen();
+            if (laud.isKeegiVõitis()) {
+                laud.hetkeseis();
+                break;
+            }
             laud.hetkeseis();
             laud.uusKäik(mängija2);
             laud.clearScreen();
         }
-
-
     }
 }
