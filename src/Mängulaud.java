@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Mängulaud {
+
     private char[][][] laud;
 
     public Mängulaud() {
@@ -20,6 +21,7 @@ public class Mängulaud {
     }
 
     // Mängulaua hetkeseisu näitamine, mis peaks toimuma pärast iga käiku
+    // TODO: 14.03.18 Possible upgrade: Tasemed üksteise kõrvale, siis kulub vähem kõrgus-ruumi terminalis.
     public void hetkeseis() {
         for (int i = 0; i < 3; i++) {
             System.out.println("Tase "+i);
@@ -38,6 +40,8 @@ public class Mängulaud {
 
     // Uue käigu koordinaadid
     public ArrayList<Integer> koordinaadid() {
+
+        // TODO: 14.03.18 Jasper: Sisestamine kõik ühele reale: sisesta rtase rida veerg tühikutega vahel 1 0 1, kasutades nt nextString.split(Regex:" ") etc  
         ArrayList<Integer> koordinaadid = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         System.out.println("Sisesta tase (0, 1, 2)");
@@ -79,4 +83,6 @@ public class Mängulaud {
             koordinaadid();
         }
     }
+
+    public boolean mänguVõitmine()
 }
