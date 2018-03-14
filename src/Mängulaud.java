@@ -23,19 +23,18 @@ public class Mängulaud {
     // Mängulaua hetkeseisu näitamine, mis peaks toimuma pärast iga käiku
     // TODO: 14.03.18 Possible upgrade: Tasemed üksteise kõrvale, siis kulub vähem kõrgus-ruumi terminalis.
     public void hetkeseis() {
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Tase "+ (i + 1));
-            for (int j = 0; j < 3; j++) {
-                for (int k = 0; k < 3; k++) {
+
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
                     {
-                        System.out.print(laud[i][j][k]);
+                        System.out.print(laud[i][j]);
                     }
                     System.out.print(" ");
                 }
                 System.out.println();
             }
             System.out.println();
-        }
+
     }
 
     // Uue käigu koordinaadid
@@ -50,11 +49,9 @@ public class Mängulaud {
         String käik = scan.nextLine();
         String[] eraldiKäik = käik.split(" ");
 
-        int tase = Integer.parseInt(eraldiKäik[0]) - 1;
         int rida = 3 - Integer.parseInt(eraldiKäik[1]);
         int veerg = Integer.parseInt(eraldiKäik[2]) - 1;
 
-        koordinaadid.add(tase);
         koordinaadid.add(rida);
         koordinaadid.add(veerg);
         return koordinaadid;
