@@ -3,11 +3,14 @@ import java.util.Scanner;
 
 public class Mängulaud {
     // FIXME: 14.03.18 MUUTUJAD PRIVAATSEKS!
+    private char[][] laud;
     // TODO: 14.03.18 kasutada enum objekte mitte char laua jaoks.
     private static char[][] laud;
     private int käikudeArv = 0;
     private int dimensioon = 3;
 
+    public Mängulaud() {
+        laud = new char[3][3];
 
     public Mängulaud(char[][] laud, int käikudeArv) {
         this.laud = laud;
@@ -16,28 +19,32 @@ public class Mängulaud {
 
     // Uue tühja laua loomine
     public void tühiLaud() {
+
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    laud[i][j] = '-';
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 3; k++) {
                     laud[i][j] = '-';
                 }
             }
-        }
+
     }
 
     // Mängulaua hetkeseisu näitamine, mis peaks toimuma pärast iga käiku
     public void hetkeseis() {
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    {
-                        System.out.print(laud[i][j]);
-                    }
-                    System.out.print(" ");
-                }
-                System.out.println();
-            }
-            System.out.println();
 
+    System.out.println("+---+---+---+");        for (int i = 0; i < 3; i++) {System.out.print("| ");
+                for (int j = 0; j < 3; j++) {
+
+                        System.out.print(laud[i][j]+ " | ");
+                    }
+
+                System.out.println();
+
+            System.out.println("+---+---+---+");
+}
     }
 
     // Uue käigu koordinaadid
@@ -45,7 +52,6 @@ public class Mängulaud {
 
         ArrayList<Integer> koordinaadid = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
-        // TODO: 14.03.18 Küsi dimensiooni
 
         System.out.println("Sisesta soovitava ruudu koordinaadid nii, et kõik numbrid 1-3, ");
         System.out.println("esimene number tähistab rida ja teine veergu Nt: 2 2 paneb märgi teise rea keskele.");
@@ -129,10 +135,10 @@ public class Mängulaud {
         if (käikudeArv == (Math.pow(dimensioon,2) -1)){
             System.out.println("Oi kui kahju, tegemist on viigiga!");
         }
-        
+
     }
 
-     
+
 
 //    M2ngu voitmine
 
