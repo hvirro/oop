@@ -1,6 +1,7 @@
+
 public class TestMängulaud {
 
-    
+
     public static void main(String[] args) {
         Mängulaud laud = new Mängulaud();
         // Tähise määramine
@@ -14,13 +15,9 @@ public class TestMängulaud {
         }
 
         laud.tühiLaud();
-
         laud.hetkeseis();
         laud.uusKäik(mängija1);
-
-        laud.hetkeseis();
-        laud.uusKäik(mängija2);
-        laud.hetkeseis();
-
+        laud.uusKäik(mängija1);
     }
 }
+
