@@ -5,46 +5,33 @@ public class Mängulaud {
     // FIXME: 14.03.18 MUUTUJAD PRIVAATSEKS!
     private char[][] laud;
     // TODO: 14.03.18 kasutada enum objekte mitte char laua jaoks.
-    private static char[][] laud;
     private int käikudeArv = 0;
     private int dimensioon = 3;
-
     public Mängulaud() {
-        laud = new char[3][3];
-
-    public Mängulaud(char[][] laud, int käikudeArv) {
-        this.laud = laud;
-        this.käikudeArv = käikudeArv;
+        laud = new char[3][3][3];
     }
 
     // Uue tühja laua loomine
     public void tühiLaud() {
-
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    laud[i][j] = '-';
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                for (int k = 0; k < 3; k++) {
-                    laud[i][j] = '-';
-                }
+                laud[i][j] = '-';
             }
+        }
 
     }
 
     // Mängulaua hetkeseisu näitamine, mis peaks toimuma pärast iga käiku
     public void hetkeseis() {
 
-    System.out.println("+---+---+---+");        for (int i = 0; i < 3; i++) {System.out.print("| ");
+        System.out.println("+---+---+---+");
+        for (int i = 0; i < 3; i++) {System.out.print("|");
                 for (int j = 0; j < 3; j++) {
-
-                        System.out.print(laud[i][j]+ " | ");
+                    System.out.print(laud[i][j]+ " | ");
                     }
-
-                System.out.println();
-
+                    System.out.println();
             System.out.println("+---+---+---+");
-}
+        }
     }
 
     // Uue käigu koordinaadid
