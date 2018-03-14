@@ -8,7 +8,7 @@ public class Mängulaud {
     private int käikudeArv = 0;
     private int dimensioon = 3;
     public Mängulaud() {
-        laud = new char[3][3][3];
+        laud = new char[3][3];
     }
 
     // Uue tühja laua loomine
