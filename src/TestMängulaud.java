@@ -14,8 +14,13 @@ public class TestMängulaud {
         }
 
         laud.tühiLaud();
+
         laud.hetkeseis();
         laud.uusKäik(mängija1);
-        laud.uusKäik(mängija1);
+
+        laud.hetkeseis();
+        laud.uusKäik(mängija2);
+        laud.hetkeseis();
+
     }
 }

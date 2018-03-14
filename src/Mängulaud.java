@@ -24,7 +24,7 @@ public class Mängulaud {
     // TODO: 14.03.18 Possible upgrade: Tasemed üksteise kõrvale, siis kulub vähem kõrgus-ruumi terminalis.
     public void hetkeseis() {
         for (int i = 0; i < 3; i++) {
-            System.out.println("Tase "+i);
+            System.out.println("Tase "+ (i + 1));
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 3; k++) {
                     {
@@ -41,27 +41,20 @@ public class Mängulaud {
     // Uue käigu koordinaadid
     public ArrayList<Integer> koordinaadid() {
 
-        // TODO: 14.03.18 Jasper: Sisestamine kõik ühele reale: sisesta rtase rida veerg tühikutega vahel 1 0 1, kasutades nt nextString.split(Regex:" ") etc  
+        // TODO: 14.03.18 Jasper: Sisestamine kõik ühele reale: sisesta tase rida veerg tühikutega vahel 1 0 1, kasutades nt nextString.split(Regex:" ") etc
         ArrayList<Integer> koordinaadid = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
-        System.out.println("Sisesta tase (0, 1, 2)");
-        int tase = scan.nextInt();
-        while (!(tase < 3)) {
-            System.out.println("Tase ei sobi! Sisesta uus!");
-            tase = scan.nextInt();
-        }
-        System.out.println("Sisesta rida (0, 1, 2)");
-        int rida = scan.nextInt();
-        while (!(rida < 3)) {
-            System.out.println("Rida ei sobi! Sisesta uus!");
-            rida = scan.nextInt();
-        }
-        System.out.println("Sisesta veerg (0, 1, 2)");
-        int veerg = scan.nextInt();
-        while (!(veerg < 3)) {
-            System.out.println("Veerg ei sobi! Sisesta uus!");
-            veerg = scan.nextInt();
-        }
+
+        System.out.println("Sisesta soovitava ruudu koordinaadid nii, et kõik numbrid 1-3, ");
+        System.out.println("esimene number tähistab taset, teine rida ja kolmas veergu. Nt: 2 2 2 paneb märgi teise taseme keskele.");
+
+        String käik = scan.nextLine();
+        String[] eraldiKäik = käik.split(" ");
+
+        int tase = 3 - Integer.parseInt(eraldiKäik[0]);
+        int rida = 3 - Integer.parseInt(eraldiKäik[1]);
+        int veerg = 3 - Integer.parseInt(eraldiKäik[2]);
+
         koordinaadid.add(tase);
         koordinaadid.add(rida);
         koordinaadid.add(veerg);
@@ -84,5 +77,35 @@ public class Mängulaud {
         }
     }
 
-    public boolean mänguVõitmine()
+    // public Mängija mänguVõitmine()
+    /* Võimalikud võitmislahendused.
+
+     X-telje peal on üheksa lahendust. Need on siis näiteks
+     1. tase; 1 rida täiesti täis, 2. rida täiesti täis või kolmas.
+     Sama asi kordub kõikide tasemetega.
+     9 tk
+
+
+     Y- telje võiduvõimalused:
+     1. tase; 1 veerg täiesti täis, 2. veerg täiesti täis või kolmas.
+     Sama asi kordub kõikide tasemetega.
+     9 tk
+
+     Z- telje peal võiduvõimalused:
+     1. tase 1 1  ning 2. tase 1 1 ning 3. tase 1 1 teevad kokku kogu võidu"rea!.
+     Selliseid  võiduvõimalusi üksteise all on 9.
+     9tk
+
+
+     Järele jäävad diagonaalid.
+     Igal tasemel endal on 2 diagonaalid x 3 = 6 diagonaali.
+     6tk
+
+     Igal Y telje tasemel (püstised) on samuti 6 diagonaali ühtepidi ning samuti veel 6 diagonaali teistpidi vaadates.
+     12tk
+
+     Järele jäävad vaid "3D diagonaalid". Ehk neid on 4 tk.
+     4tk
+
+     Kokku tuleb peale igat käiku kontrollida: 49 lahendust. */
 }
