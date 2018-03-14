@@ -1,24 +1,14 @@
 public class Mängija {
-    private static int indeks;
-    private char[] tähised;
-    private char mängija;
+    private char tähis;
     private String Player;
     private int mängeVõidetud = 0;
 
-    public Mängija( String player, int mängeVõidetud) {
-        Player = player;
+    public Mängija(String player, int mängeVõidetud) {
+        this.Player = player;
         this.mängeVõidetud = mängeVõidetud;
     }
 
-    public  int getIndeks() {
-        return indeks;
-    }
-
-    public  void setIndeks(int indeks) {
-        this.indeks = indeks;
-    }
-
-    public  int getMängeVõidetud() {
+    public int getMängeVõidetud() {
         return mängeVõidetud;
     }
 
@@ -26,18 +16,23 @@ public class Mängija {
         this.mängeVõidetud = mängeVõidetud;
     }
 
-    public char getMängija() {
-        return mängija;
-    }
-
     public String getPlayer() {
         return Player;
     }
 
-    public  char tähis() {
+    public char getTähis() {
+        return tähis;
+    }
+
+    public void setTähis(char tähis) {
+        this.tähis = tähis;
+    }
+
+    // Meetod juhusliku tähise määramiseks mängijale
+    public char tähis() {
         char[] tähised = {'X', 'O'};
-        indeks = (int)Math.round((Math.random()*1));
-        char mängija = tähised[indeks];
-        return mängija;
+        int indeks = (int)Math.round((Math.random()*1));
+        char tähis = tähised[indeks];
+        return tähis;
     }
 }
