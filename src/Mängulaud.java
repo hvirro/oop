@@ -103,7 +103,7 @@ public class Mängulaud {
      Igal Y telje tasemel (püstised) on samuti 6 diagonaali ühtepidi ning samuti veel 6 diagonaali teistpidi vaadates.
      12tk
 
-     Järele jäävad vaid "3D diagonaalid". Ehk neid on 4 tk.
+     Järele jäävad vaid "3D diagonaalid". Ehk neid on 8 tk.
      4tk
 
      Kokku tuleb peale igat käiku kontrollida: 49 lahendust. */
