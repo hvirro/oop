@@ -2,39 +2,23 @@ public class Mängija {
     private static int indeks;
     private char[] tähised;
     private char mängija;
+    private String Player;
     private int mängeVõidetud = 0;
 
-    public Mängija(char[] tähised, char mängija, int mängeVõidetud) {
-        this.tähised = tähised;
-        this.mängija = mängija;
+    public Mängija( String player, int mängeVõidetud) {
+        Player = player;
         this.mängeVõidetud = mängeVõidetud;
     }
 
-    public static int getIndeks() {
+    public  int getIndeks() {
         return indeks;
     }
 
-    public static void setIndeks(int indeks) {
-        Mängija.indeks = indeks;
+    public  void setIndeks(int indeks) {
+        this.indeks = indeks;
     }
 
-    public char[] getTähised() {
-        return tähised;
-    }
-
-    public void setTähised(char[] tähised) {
-        this.tähised = tähised;
-    }
-
-    public char getMängija() {
-        return mängija;
-    }
-
-    public void setMängija(char mängija) {
-        this.mängija = mängija;
-    }
-
-    public int getMängeVõidetud() {
+    public  int getMängeVõidetud() {
         return mängeVõidetud;
     }
 
@@ -42,7 +26,15 @@ public class Mängija {
         this.mängeVõidetud = mängeVõidetud;
     }
 
-    public static char tähis() {
+    public char getMängija() {
+        return mängija;
+    }
+
+    public String getPlayer() {
+        return Player;
+    }
+
+    public  char tähis() {
         char[] tähised = {'X', 'O'};
         indeks = (int)Math.round((Math.random()*1));
         char mängija = tähised[indeks];

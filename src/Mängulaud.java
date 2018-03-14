@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Mängulaud {
-    // FIXME: 14.03.18 MUUTUJAD PRIVAATSEKS!
     private char[][] laud;
-    // TODO: 14.03.18 kasutada enum objekte mitte char laua jaoks.
     private int käikudeArv = 0;
     private int dimensioon = 3;
     private boolean keegiVõitis = false;
@@ -66,7 +64,7 @@ public class Mängulaud {
     }
 
     // Uue käigu lisamine
-    public void uusKäik(char mängija) {
+    public void uusKäik(char mängija, Mängija mängur) {
         ArrayList<Integer> koordinaadid = koordinaadid();
         int rida = koordinaadid.get(0);
         int veerg = koordinaadid.get(1);
@@ -90,7 +88,7 @@ public class Mängulaud {
                 break;
             if (i == dimensioon-1){
                 System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
-//              Mängija.setVõitudeArv++;
+                mängur.setMängeVõidetud(mängur.getMängeVõidetud()+1);
                 keegiVõitis = true;
                 break;
             }
@@ -103,7 +101,7 @@ public class Mängulaud {
             }
             if (i == dimensioon-1){
                 System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
-//              Mängija.setVõitudeArv++;
+                mängur.setMängeVõidetud(mängur.getMängeVõidetud()+1);
                 keegiVõitis = true;
                 break;
             }
@@ -115,7 +113,7 @@ public class Mängulaud {
                 }
                 if (i == dimensioon-1){
                     System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
-//                  Mängija.setVõitudeArv++;
+                    mängur.setMängeVõidetud(mängur.getMängeVõidetud()+1);
                     keegiVõitis = true;
                     break;
                 }
@@ -128,7 +126,7 @@ public class Mängulaud {
                     break;
                 if (i == dimensioon -1){
                     System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
-//                  mängija.setVõitudeArv++;
+                    mängur.setMängeVõidetud(mängur.getMängeVõidetud()+1);
                     keegiVõitis = true;
                     break;
                 }
