@@ -3,38 +3,35 @@ import java.util.Scanner;
 
 public class Mängulaud {
     // FIXME: 14.03.18 MUUTUJAD PRIVAATSEKS!
-    private char[][][] laud;
+    private char[][] laud;
 
     public Mängulaud() {
-        laud = new char[3][3][3];
+        laud = new char[3][3];
     }
 
     // Uue tühja laua loomine
     public void tühiLaud() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                for (int k = 0; k < 3; k++) {
-                    laud[i][j][k] = '-';
+
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    laud[i][j] = '-';
                 }
             }
-        }
+
     }
 
     // Mängulaua hetkeseisu näitamine, mis peaks toimuma pärast iga käiku
     // TODO: 14.03.18 Possible upgrade: Tasemed üksteise kõrvale, siis kulub vähem kõrgus-ruumi terminalis.
     public void hetkeseis() {
-
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    {
-                        System.out.print(laud[i][j]);
-                    }
-                    System.out.print(" ");
-                }
-                System.out.println();
+        System.out.println("+---+---+---+");
+        for (int i = 0; i < 3; i++) {
+            System.out.print("| ");
+            for (int j = 0; j < 3; j++) {
+                System.out.print(laud[i][j] + " | ");
             }
             System.out.println();
-
+            System.out.println("+---+---+---+");
+        }
     }
 
     // Uue käigu koordinaadid
@@ -58,7 +55,7 @@ public class Mängulaud {
     }
 
     // Uue käigu lisamine
-    public void uusKäik(char mängija) {
+    /*public void uusKäik(char mängija) {
         ArrayList<Integer> koordinaadid = koordinaadid();
         int tase = koordinaadid.get(0);
         int rida = koordinaadid.get(1);
@@ -71,7 +68,7 @@ public class Mängulaud {
             System.out.println("Ruut on täis! Sisesta uus koordinaat!");
             koordinaadid();
         }
-    }
+    }*/
 
     // public Mängija mänguVõitmine()
     /* Võimalikud võitmislahendused.
