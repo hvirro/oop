@@ -90,7 +90,7 @@ public class Mängulaud {
                 System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
 //              Mängija.setVõitudeArv++;
                 keegiVõitis = true;
-                return;
+                break;
             }
 
         }
@@ -103,7 +103,7 @@ public class Mängulaud {
                 System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
 //              Mängija.setVõitudeArv++;
                 keegiVõitis = true;
-                return;
+                break;
             }
         }
         if (rida == veerg){
@@ -115,7 +115,7 @@ public class Mängulaud {
                     System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
 //                  Mängija.setVõitudeArv++;
                     keegiVõitis = true;
-                    return;
+                    break;
                 }
             }
         }
@@ -128,7 +128,7 @@ public class Mängulaud {
                     System.out.println("Mängija " + mängija + " on võitnud! Palju õnne! ");
 //                  mängija.setVõitudeArv++;
                     keegiVõitis = true;
-                    return;
+                    break;
                 }
             }
         }
