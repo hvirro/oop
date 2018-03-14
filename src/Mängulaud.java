@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Mängulaud {
-
+    // FIXME: 14.03.18 MUUTUJAD PRIVAATSEKS!
     private char[][][] laud;
 
     public Mängulaud() {
@@ -41,7 +41,6 @@ public class Mängulaud {
     // Uue käigu koordinaadid
     public ArrayList<Integer> koordinaadid() {
 
-        // TODO: 14.03.18 Jasper: Sisestamine kõik ühele reale: sisesta tase rida veerg tühikutega vahel 1 0 1, kasutades nt nextString.split(Regex:" ") etc
         ArrayList<Integer> koordinaadid = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
 
@@ -51,9 +50,9 @@ public class Mängulaud {
         String käik = scan.nextLine();
         String[] eraldiKäik = käik.split(" ");
 
-        int tase = 3 - Integer.parseInt(eraldiKäik[0]);
+        int tase = Integer.parseInt(eraldiKäik[0]) - 1;
         int rida = 3 - Integer.parseInt(eraldiKäik[1]);
-        int veerg = 3 - Integer.parseInt(eraldiKäik[2]);
+        int veerg = Integer.parseInt(eraldiKäik[2]) - 1;
 
         koordinaadid.add(tase);
         koordinaadid.add(rida);
