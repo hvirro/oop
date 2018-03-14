@@ -106,5 +106,5 @@ public class Mängulaud {
      Järele jäävad vaid "3D diagonaalid". Ehk neid on 8 tk.
      4tk
 
-     Kokku tuleb peale igat käiku kontrollida: 49 lahendust. */
+     Kokku tuleb peale igat käiku kontrollida: 53 lahendust. */
 }
