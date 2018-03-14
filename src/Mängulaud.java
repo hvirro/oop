@@ -54,8 +54,8 @@ public class Mängulaud {
         String käik = scan.nextLine();
         String[] eraldiKäik = käik.split(" ");
 
-        int rida = 3 - Integer.parseInt(eraldiKäik[0]);
-        int veerg = Integer.parseInt(eraldiKäik[1]) - 1;
+        int rida = Integer.parseInt(eraldiKäik[0]) - 1;
+        int veerg = 3 - Integer.parseInt(eraldiKäik[1]);
 
         koordinaadid.add(rida);
         koordinaadid.add(veerg);
