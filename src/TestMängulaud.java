@@ -1,3 +1,5 @@
+// Programmi käivitamiseks tuleks sisestada konsoolis vastavas kaustas: java TestMängulaud
+
 import java.util.Scanner;
 
 public class TestMängulaud {
