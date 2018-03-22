@@ -34,7 +34,7 @@ public class TestMängulaud {
         while (mängija1.getMängeVõidetud() <= 3 || mängija2.getMängeVõidetud() <= 3) {
             System.out.println(mängija1.getMängeVõidetud());
             System.out.println(mängija2.getMängeVõidetud());
-            while (laud.isKeegiVõitis()) {
+            while (!laud.isKeegiVõitis()) {
                 laud.hetkeseis();
                 laud.uusKäik(mängija1.getTähis(), mängija1);
                 laud.clearScreen();
@@ -49,7 +49,7 @@ public class TestMängulaud {
             // Skoori kuvamine
             System.out.println("Skoor on");
             System.out.println(mängija1.getMängeVõidetud() + " - " + mängija2.getMängeVõidetud());
-            while (laud.isKeegiVõitis()) {
+            while (!laud.isKeegiVõitis()) {
                 laud.hetkeseis();
                 laud.uusKäik(mängija1.getTähis(), mängija1);
                 laud.clearScreen();
