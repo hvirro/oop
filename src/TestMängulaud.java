@@ -21,18 +21,20 @@ public class TestMängulaud {
         mängija1.setTähis(mängija1.tähis());
         if (mängija1.getTähis() == 'X') {
             mängija2.setTähis('O');
-
         }
         else {
             mängija2.setTähis('X');
         }
 
+
         // Tühi mängulaud
         laud.tühiLaud();
 
         // Mäng käib, kuni üks mängija saavutab kolmanda võidu
-//        while (mängija1.getMängeVõidetud() <= 3 || mängija2.getMängeVõidetud() <= 3) {
-            while (!(laud.isKeegiVõitis())) {
+        while (mängija1.getMängeVõidetud() <= 3 || mängija2.getMängeVõidetud() <= 3) {
+            System.out.println(mängija1.getMängeVõidetud());
+            System.out.println(mängija2.getMängeVõidetud());
+            while (laud.isKeegiVõitis()) {
                 laud.hetkeseis();
                 laud.uusKäik(mängija1.getTähis(), mängija1);
                 laud.clearScreen();
@@ -47,7 +49,7 @@ public class TestMängulaud {
             // Skoori kuvamine
             System.out.println("Skoor on");
             System.out.println(mängija1.getMängeVõidetud() + " - " + mängija2.getMängeVõidetud());
-            while (!(laud.isKeegiVõitis())) {
+            while (laud.isKeegiVõitis()) {
                 laud.hetkeseis();
                 laud.uusKäik(mängija1.getTähis(), mängija1);
                 laud.clearScreen();
@@ -64,6 +66,6 @@ public class TestMängulaud {
             System.out.println("Kolme mängu tulemusena osutus võitjaks:");
             if (mängija1.getMängeVõidetud() < mängija2.getMängeVõidetud()) System.out.println(mängija2.getPlayer());
             else System.out.println(mängija1.getPlayer());
-//        }
+        }
     }
 }
