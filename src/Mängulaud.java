@@ -32,8 +32,6 @@ public class Mängulaud {
                 laud[i][j] = '-';
             }
         }
-        System.out.println("Sisesta soovitud ruudu koordinaadid nii, et kõik numbrid on vahemikus 1-3, kusjuures");
-        System.out.println("esimene number tähistab rida ja teine veergu. Nt: 2 2 paneb tähise teise rea keskele.");
     }
 
     // Mängulaua hetkeseisu näitamine, mis toimub pärast iga käiku

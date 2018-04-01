@@ -3,7 +3,7 @@
 import java.util.Scanner;
 
 public class TestMängulaud {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // Uus mängulaua objekt
         Mängulaud laud = new Mängulaud();
 
@@ -26,6 +26,10 @@ public class TestMängulaud {
             mängija2.setTähis('X');
         }
 
+        // Tervituse ja mängu reeglite väljastamine
+        System.out.println("Tere tulemast mängima trips-traps-trulli, mis kestab kolme võiduni!");
+        System.out.println("Sisesta soovitud ruudu koordinaadid nii, et kõik numbrid on vahemikus 1-3, kusjuures ");
+        System.out.println("esimene number tähistab rida ja teine veergu. Nt: 2 2 paneb tähise teise rea keskele.");
 
         // Tühi mängulaud
         laud.tühiLaud();
