@@ -47,7 +47,7 @@ public class TTT extends JPanel {
             }
 
             if (viik() == true) {
-                JOptionPane.showConfirmDialog(null, "Oi kui kahju, tegemist on viigiga!");
+                JOptionPane.showMessageDialog(null, "Oi kui kahju, tegemist on viigiga!");
                 tühiLaud();
             }
 
