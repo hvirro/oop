@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Mängulaud {
@@ -51,6 +53,7 @@ public class Mängulaud {
         ArrayList<Integer> koordinaadid = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
         String käik = scan.nextLine();
+        // Sisendi kontroll
         String[] eraldiKäik = käik.split(" ");
         // Sisendi teisendamine rea ja veeru numbriks
         int rida = Integer.parseInt(eraldiKäik[0]) - 1;
