@@ -10,7 +10,7 @@ public class TTT extends JPanel {
     // 3*3 mängulaud
     public TTT() {
         setLayout(new GridLayout(3,3));
-        tühiLaud();
+        uusLaud();
     }
 
     // Uue laua loomine
@@ -40,17 +40,14 @@ public class TTT extends JPanel {
                 valitudNupp.setText("X");
             else
                 valitudNupp.setText("O");
-
             if(keegiVõitis() == true) {
                 JOptionPane.showConfirmDialog(null, "Mäng läbi!");
                 tühiLaud();
             }
-
             if (viik() == true) {
                 JOptionPane.showMessageDialog(null, "Oi kui kahju, tegemist on viigiga!");
                 tühiLaud();
             }
-
             käik++;
         }
 
