@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 public class Mängija {
     private char tähis;
     private String Player;
@@ -36,10 +34,5 @@ public class Mängija {
         int indeks = (int)Math.round((Math.random()*1));
         char tähis = tähised[indeks];
         return tähis;
-    }
-
-    public String mängijaNimi(int nr) {
-        String nimi = JOptionPane.showInputDialog("Mängija "+nr+" nimi:");
-        return nimi;
     }
 }
