@@ -1,4 +1,7 @@
 import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 public class TestTTT {
     static String mängijaNimi() {
@@ -9,7 +12,23 @@ public class TestTTT {
         return nimi;
     }
 
-    public static void main(String[] args) {
+    static void tervitus(String fail) throws Exception {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(new URL(fail).openStream()))) {
+            String rida = br.readLine();
+            StringBuilder sb = new StringBuilder();
+            while (rida != null) {
+                sb.append(rida+"\n");
+                rida = br.readLine();
+            }
+            JFrame aken = new JFrame();
+            JOptionPane.showMessageDialog(aken, sb, null, JOptionPane.PLAIN_MESSAGE);
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        // Tervitus
+        tervitus("https://raw.githubusercontent.com/hvirro/oop/master/src/tervitus.txt");
+
         // Uued mängijad
         int nimeLugeja = 0;
         String[] nimed = new String[2];
