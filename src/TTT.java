@@ -31,7 +31,6 @@ public class TTT extends JPanel {
     public void tühiLaud() {
         for(int i = 0; i < 9; i++) {
             nupud[i].setText("");
-            nupud[i].setEnabled(true);
         }
         käik = 0;
     }
@@ -45,14 +44,22 @@ public class TTT extends JPanel {
     private class nupuKuular implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            JButton valitudNupp = (JButton) e.getSource();
+            // Kui tähis olemas, siis ei ole võimalik nupule vajutada
+            try {
+                if (!valitudNupp.getText().equals("")) {
+                    throw new HõivatudNupuErind("Nupp on hõivatud! Vali uus!");
+                }
+            }
+            catch (HõivatudNupuErind erind) {
+                JFrame aken = new JFrame();
+                JOptionPane.showMessageDialog(aken, erind.getMessage(), "Erind", JOptionPane.PLAIN_MESSAGE);
+            }
             // Tähise määramine vastavalt käigu numbrile
-            JButton valitudNupp = (JButton)e.getSource();
             if(käik%2 == 0)
                 lisaTähis(valitudNupp, mängija1);
             else
                 lisaTähis(valitudNupp, mängija2);
-            // Kui tähis olemas, siis ei ole võimalik nupule vajutada
-            valitudNupp.setEnabled(false);
             // Info võidu puhul
             if(keegiVõitis()) {
                 if (käik%2 == 0) {
