@@ -7,14 +7,16 @@ public class TTT extends JPanel {
     private JButton nupud[] = new JButton[9];
     private Mängija mängija1;
     private Mängija mängija2;
+    private JFrame aken;
     private int käik = 0;
 
     // 3*3 mängulaud
-    public TTT(Mängija mängija1, Mängija mängija2) {
-        setLayout(new GridLayout(3,3));
+    public TTT(Mängija mängija1, Mängija mängija2, JFrame aken) {
+        setLayout(new GridLayout(3, 3));
         uusLaud();
         this.mängija1 = mängija1;
         this.mängija2 = mängija2;
+        this.aken = aken;
     }
 
     // Uue laua loomine
@@ -87,6 +89,24 @@ public class TTT extends JPanel {
                         "Oi kui kahju, tegemist on viigiga!" + "\n" + skoor(),
                         "Viik", JOptionPane.INFORMATION_MESSAGE);
                 tühiLaud();
+            }
+            // Võitja väljastamine ja akna ning programmi sulgemine
+            if (mängija1.getMängeVõidetud() == 3 || mängija2.getMängeVõidetud() == 3) {
+                if (mängija1.getMängeVõidetud() == 3) {
+                    JOptionPane.showMessageDialog(
+                            aken,
+                            "Kolme mängu tulemusena osutus võitjaks " + mängija1.getPlayer() + "!",
+                            "Mäng läbi!", JOptionPane.PLAIN_MESSAGE);
+                }
+                else if (mängija2.getMängeVõidetud() == 3) {
+                    JOptionPane.showMessageDialog(
+                            aken,
+                            "Kolme mängu tulemusena osutus võitjaks " + mängija2.getPlayer() + "!",
+                            "Mäng läbi!", JOptionPane.PLAIN_MESSAGE);
+                }
+                aken.setVisible(false);
+                aken.dispose();
+                System.exit(0);
             }
             käik++;
         }

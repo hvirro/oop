@@ -6,8 +6,9 @@ import java.net.URL;
 public class TestTTT {
     // Mängija nime määramine
     static String mängijaNimi() {
+        JFrame aken = new JFrame();
         String nimi = JOptionPane.showInputDialog(
-                null, "Sisesta nimi:", "Mängija nimi", JOptionPane.PLAIN_MESSAGE);
+                aken, "Sisesta nimi:", "Mängija nimi", JOptionPane.PLAIN_MESSAGE);
         if (nimi.equals("")) {
             throw new MängijaNimeErind("Sisend oli tühi. Sisesta uus nimi!");
         }
@@ -45,6 +46,9 @@ public class TestTTT {
                 JFrame aken = new JFrame();
                 JOptionPane.showMessageDialog(aken, e.getMessage(), "Erind", JOptionPane.PLAIN_MESSAGE);
             }
+            catch (NullPointerException e) {
+                System.exit(0);
+            }
         }
         Mängija mängija1 = new Mängija(nimed[0],0);
         Mängija mängija2 = new Mängija(nimed[1],0);
@@ -62,7 +66,7 @@ public class TestTTT {
         if (mängija1.getPlayer() != null || mängija2.getPlayer() != null) {
             JFrame aken = new JFrame("TTT");
             aken.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            aken.getContentPane().add(new TTT(mängija1, mängija2));
+            aken.getContentPane().add(new TTT(mängija1, mängija2, aken));
             aken.setBounds(0, 0, 600, 600);
             aken.setVisible(true);
             aken.setResizable(false);
