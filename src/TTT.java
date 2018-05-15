@@ -1,6 +1,11 @@
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.swing.*;
 
 public class TTT extends JPanel {
@@ -92,6 +97,12 @@ public class TTT extends JPanel {
             }
             // Võitja väljastamine ja akna ning programmi sulgemine
             if (mängija1.getMängeVõidetud() == 3 || mängija2.getMängeVõidetud() == 3) {
+                try {
+                    tulemus("tulemused.txt");
+                }
+                catch (IOException ioe) {
+                    System.out.println(ioe.getMessage());
+                }
                 if (mängija1.getMängeVõidetud() == 3) {
                     JOptionPane.showMessageDialog(
                             aken,
@@ -170,6 +181,17 @@ public class TTT extends JPanel {
         // Skoori kuvamine
         public String skoor() {
             return "Skoor on " + mängija1.getMängeVõidetud() + " - " + mängija2.getMängeVõidetud() + ".";
+        }
+
+        // Mängu tulemuse kirjutamine faili
+        public void tulemus(String fail) throws IOException {
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(fail, true))) {
+                bw.write(
+                        "Skoor: " + mängija1.getPlayer() + " " + mängija1.getMängeVõidetud() + " - " +
+                                mängija2.getMängeVõidetud() + " " + mängija2.getPlayer() +
+                                " Aeg: " + LocalDateTime.now());
+                bw.newLine();
+            }
         }
     }
 }
