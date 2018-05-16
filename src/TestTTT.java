@@ -62,13 +62,14 @@ public class TestTTT {
             mängija2.setTähis('X');
         }
 
+        // Kui mängijad loodud, siis alusta mängu
         if (mängija1.getPlayer() != null || mängija2.getPlayer() != null) {
             JFrame aken = new JFrame("TTT");
             aken.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             aken.getContentPane().add(new TTT(mängija1, mängija2, aken));
             aken.setBounds(0, 0, 600, 600);
             aken.setVisible(true);
-            aken.setResizable(false);
+            aken.setResizable(true);
         }
     }
 }

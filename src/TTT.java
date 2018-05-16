@@ -57,16 +57,16 @@ public class TTT extends JPanel {
                 if (!valitudNupp.getText().equals("")) {
                     throw new HõivatudNupuErind("Nupp on hõivatud! Vali uus!");
                 }
+                // Tähise määramine vastavalt käigu numbrile
+                if(käik%2 == 0)
+                    lisaTähis(valitudNupp, mängija1);
+                else
+                    lisaTähis(valitudNupp, mängija2);
             }
             catch (HõivatudNupuErind erind) {
                 JFrame aken = new JFrame();
                 JOptionPane.showMessageDialog(aken, erind.getMessage(), "Erind", JOptionPane.PLAIN_MESSAGE);
             }
-            // Tähise määramine vastavalt käigu numbrile
-            if(käik%2 == 0)
-                lisaTähis(valitudNupp, mängija1);
-            else
-                lisaTähis(valitudNupp, mängija2);
             // Info võidu puhul
             if(keegiVõitis()) {
                 if (käik%2 == 0) {
