@@ -66,6 +66,7 @@ public class TTT extends JPanel {
             catch (HõivatudNupuErind erind) {
                 JFrame aken = new JFrame();
                 JOptionPane.showMessageDialog(aken, erind.getMessage(), "Erind", JOptionPane.PLAIN_MESSAGE);
+                käik = käik-1;
             }
             // Info võidu puhul
             if(keegiVõitis()) {
